@@ -13,8 +13,8 @@ function bytesConvertor(bytes, num = 3){
     let size = bytes;
     let index = 0;
 
-    for(index = 0; size >= 1024 && index < units.length - 1; index++){
-        size /= 1024;
+    for(index = 0; size >= 1000; index++){
+        size /= 1000;
     }
 
     return `${size.toPrecision(num)}${units[index]}`
