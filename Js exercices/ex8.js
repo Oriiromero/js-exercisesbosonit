@@ -4,20 +4,20 @@ Primer parámetro debe ser el número de bytes
 Segundo parámetro debe ser un número especificando la cantidad de dígitos a los que se debe truncar el resultado (esto se puede hacer con Number.prototype.toPrecision()). Por defecto, este parámetro debe de tener un valor de 3.
  */
 
-function bytesConvertor(bytes, num = 3){
-    if(bytes < 0){
-        return "Negative numbers can't be converted!";
-    }
+function bytesConvertor(bytes, num = 3) {
+  if (bytes < 0) {
+    return "Negative numbers can't be converted!";
+  }
 
-    const units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-    let size = bytes;
-    let index = 0;
+  const units = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+  let size = bytes;
+  let index = 0;
 
-    for(index = 0; size >= 1000; index++){
-        size /= 1000;
-    }
+  for (index = 0; size >= 1000; index++) {
+    size /= 1000;
+  }
 
-    return `${size.toPrecision(num)}${units[index]}`
+  return `${size.toPrecision(num)}${units[index]}`;
 }
 
 console.log(bytesConvertor(1000));
